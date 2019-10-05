@@ -1,0 +1,490 @@
+
+/* 
+  flexbox utility class used globally
+  default flex direction: row
+*/
+.flexbox {
+  display: flex;
+}
+.flexdir-row {
+  flex-direction: row;
+}
+.flexdir-rowrev {
+  flex-direction: row-reverse;
+}
+.flexdir-col {
+  flex-direction: column;
+}
+.flexdir-colrev {
+  flex-direction: column-reverse;
+}
+
+/* flex amount classes for children */
+.flex-1 {
+  flex: 1;
+}
+.flex-2 {
+  flex: 2;
+}
+.flex-3 {
+  flex: 3;
+}
+.flex-4 {
+  flex: 4;
+}
+.flex-5 {
+  flex: 5;
+}
+.flex-6 {
+  flex: 6;
+}
+.flex-7 {
+  flex: 7;
+}
+.flex-8 {
+  flex: 8;
+}
+.flex-9 {
+  flex: 9;
+}
+.flex-10 {
+  flex: 10;
+}
+.flex-11 {
+  flex: 11;
+}
+.flex-12 {
+  flex: 12;
+}
+.flex-13 {
+  flex: 13;
+}
+.flex-14 {
+  flex: 14;
+}
+.flex-15 {
+  flex: 15;
+}
+.flex-16 {
+  flex: 16;
+}
+.flex-17 {
+  flex: 17;
+}
+.flex-18 {
+  flex: 18;
+}
+.flex-19 {
+  flex: 19;
+}
+.flex-20 {
+  flex: 20;
+}
+
+/* flex important override default with flex-i */
+.flex-1i {
+  flex: 1 !important;
+}
+.flex-2i {
+  flex: 2 !important;
+}
+.flex-3i {
+  flex: 3 !important;
+}
+.flex-4i {
+  flex: 4 !important;
+}
+.flex-5i {
+  flex: 5 !important;
+}
+.flex-6i {
+  flex: 6 !important;
+}
+.flex-7i {
+  flex: 7 !important;
+}
+.flex-8i {
+  flex: 8 !important;
+}
+.flex-9i {
+  flex: 9 !important;
+}
+.flex-10i {
+  flex: 10 !important;
+}
+.flex-11i {
+  flex: 11 !important;
+}
+.flex-12i {
+  flex: 12 !important;
+}
+.flex-13i {
+  flex: 13 !important;
+}
+.flex-14i {
+  flex: 14 !important;
+}
+.flex-15i {
+  flex: 15 !important;
+}
+.flex-16i {
+  flex: 16 !important;
+}
+.flex-17i {
+  flex: 17 !important;
+}
+.flex-18i {
+  flex: 18 !important;
+}
+.flex-19i {
+  flex: 19 !important;
+}
+.flex-20i {
+  flex: 20 !important;
+}
+/* classes for wrapper element to align children */
+/* flex-space-center vs flexbox-space-center
+- use flex-space-center for elements that have a defined size, so flexbox does not override and strech/shrink item
+
+- use flexbox-space-center to give element a flex width that fills remaining space
+- use space-center to apply only the justify center and align center properties
+*/ 
+.space-center {
+  justify-content: center;
+  align-items: center;
+}
+.flex-space-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-center.center-self {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}
+
+.flexbox-space-center {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.flexbox-space-between {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+.flexbox-space-evenly {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+}
+.flexbox-space-around {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
+
+/* align classes */
+.flex-align-baseline {
+  align-items: baseline;
+}
+.flex-align-center {
+  align-items: center;
+}
+.flex-align-end {
+  align-items: flex-end;
+}
+.flex-align-start {
+  align-items: flex-start;
+}
+
+.flex-align-baseline.align-self {
+  align-self: baseline;
+}
+.flex-align-center.align-self {
+  align-self: center;
+}
+.flex-align-end.align-self {
+  align-self: flex-end;
+}
+.flex-align-start.align-self {
+  align-self: flex-start;
+}
+
+.flex-justify-start {
+  justify-content: flex-start;
+}
+.flex-justify-center {
+  justify-content: center;
+}
+.flex-justify-end {
+  justify-content: flex-end;
+}
+
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
+.flex-wraprev {
+  flex-wrap: wrap-reverse;
+}
+
+
+/* FLEXGAP CLASSES */
+.flexgap-1 > *{
+ margin: 0 .25rem;
+}
+.flexgap-1 > *:first-child {
+  margin: 0 .25rem 0 0;
+}
+.flexgap-1 > *:last-child{
+ margin: 0 0 0 .25rem;
+}
+.flexgap-2 > *{
+ margin: 0 .5rem;
+}
+.flexgap-2 > *:first-child {
+  margin: 0 .5rem 0 0;
+}
+.flexgap-2 > *:last-child{
+ margin: 0 0 0 .5rem;
+}
+.flexgap-3 > *{
+ margin: 0 .75rem;
+}
+.flexgap-3 > *:first-child {
+  margin: 0 .75rem 0 0;
+}
+.flexgap-3 > *:last-child{
+ margin: 0 0 0 .75rem;
+}
+.flexgap-4 > *{
+ margin: 0 1rem;
+}
+.flexgap-4 > *:first-child {
+  margin: 0 1rem 0 0;
+}
+.flexgap-4 > *:last-child{
+ margin: 0 0 0 1rem;
+}
+.flexgap-5 > *{
+ margin: 0 1.5rem;
+}
+.flexgap-5 > *:first-child {
+  margin: 0 1.5rem 0 0;
+}
+.flexgap-5 > *:last-child{
+ margin: 0 0 0 1.5rem;
+}
+
+
+.flexdir-col.flexgap-1 > *{
+ margin: .25rem 0;
+}
+.flexdir-col.flexgap-1 > *:first-child {
+  margin: 0 0 .25rem 0;
+}
+.flexdir-col.flexgap-1 > *:last-child{
+ margin: .25rem 0 0 0;
+}
+.flexdir-col.flexgap-2 > *{
+ margin: .5rem 0;
+}
+.flexdir-col.flexgap-2 > *:first-child {
+  margin: 0 0 .5rem 0;
+}
+.flexdir-col.flexgap-2 > *:last-child{
+ margin: .5rem 0 0 0;
+}
+.flexdir-col.flexgap-3 > *{
+ margin: .75rem 0;
+}
+.flexdir-col.flexgap-3 > *:first-child {
+  margin: 0 0 .75rem 0;
+}
+.flexdir-col.flexgap-3 > *:last-child{
+ margin: .75rem 0 0 0;
+}
+.flexdir-col.flexgap-4 > *{
+ margin: 1rem 0;
+}
+.flexdir-col.flexgap-4 > *:first-child {
+  margin: 0 0 1rem 0;
+}
+.flexdir-col.flexgap-4 > *:last-child{
+ margin: 1rem 0 0 0;
+}
+.flexdir-col.flexgap-5 > *{
+ margin: 1.5rem 0;
+}
+.flexdir-col.flexgap-5 > *:first-child {
+  margin: 0 0 1.5rem 0;
+}
+.flexdir-col.flexgap-5 > *:last-child{
+ margin: 1.5rem 0 0 0;
+}
+
+
+.flex-spacer {
+  flex: 1;
+}
+
+
+/* flex transition classes 
+  these classes are for transitioning the flex css property. each class increases the duration by 100ms until reaching a 1s max at the fxt-10 class.
+  fxt- is the transition class prefix and the following # number represents the duration. 
+ */
+.fxt-1 {
+  transition: flex 0.1s ease-in-out;
+}
+.fxt-2 {
+  transition: flex 0.2s ease-in-out;
+}
+.fxt-3 {
+  transition: flex 0.3s ease-in-out;
+}
+.fxt-4 {
+  transition: flex 0.4s ease-in-out;
+}
+.fxt-5 {
+  transition: flex 0.5s ease-in-out;
+}
+.fxt-6 {
+  transition: flex 0.6s ease-in-out;
+}
+.fxt-7 {
+  transition: flex 0.7s ease-in-out;
+}
+.fxt-8 {
+  transition: flex 0.8s ease-in-out;
+}
+.fxt-9 {
+  transition: flex 0.9s ease-in-out;
+}
+.fxt-10 {
+  transition: flex 1s ease-in-out;
+}
+
+/**
+
+SHORTHAND SYNTAX FOR FLEXBOX UTIL LIBRARY @rabbitwerks.js
+
+*/
+
+
+.fxbx {
+  display: flex;
+}
+
+.fd-r {
+  flex-direction: row;
+}
+.fd-rr {
+  flex-direction: row-reverse;
+}
+.fd-c {
+  flex-direction: column;
+}
+.fd-cr {
+  flex-direction: column-reverse;
+}
+
+.f1 {
+  flex: 1;
+}
+.f2 {
+  flex: 2;
+}
+.f3 {
+  flex: 3;
+}
+.f4 {
+  flex: 4;
+}
+.f5 {
+  flex: 5;
+}
+.f6 {
+  flex: 6;
+}
+.f7 {
+  flex: 7;
+}
+.f8 {
+  flex: 8;
+}
+.f9 {
+  flex: 9;
+}
+.f10 {
+  flex: 10;
+}
+.f11 {
+  flex: 11;
+}
+.f12 {
+  flex: 12;
+}
+
+.fxbx.spc-ctr {
+  justify-content: center;
+  align-items: center;
+}
+.fxbx.j-ctr {
+  justify-content: center;
+}
+.fxbx.j-fs {
+  justify-content: flex-start;
+}
+.fxbx.j-fe {
+  justify-content: flex-end;
+}
+.fxbx.a-ctr {
+  align-items: center;
+}
+.fxbx.a-fs {
+  align-items: flex-start;
+}
+.fxbx.a-fe {
+  align-items: flex-end;
+}
+
+/* Shorthand flex classes for the child elements of a flexbox element*/
+.fxbx .spc-ctr {
+  justify-content: center;
+  align-items: center;
+}
+.fxbx .j-ctr {
+  justify-content: center;
+}
+.fxbx .j-fs {
+  justify-content: flex-start;
+}
+.fxbx .j-fe {
+  justify-content: flex-end;
+}
+.fxbx .a-ctr {
+  align-items: center;
+}
+.fxbx .a-fs {
+  align-items: flex-start;
+}
+.fxbx .a-fe {
+  display: flex;
+  align-items: flex-end;
+}
+
+.fxbx.spc-bt {
+  justify-content: space-between;
+}
+.fxbx.spc-ar {
+  justify-content: space-around;
+}
+.fxbx.spc-ev {
+  justify-content: space-evenly;
+}

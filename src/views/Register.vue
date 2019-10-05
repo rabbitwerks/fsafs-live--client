@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>WELCOME</h1>
+  <div class="view">
+    <h3>Register</h3>
   </div>
 </template>
 
@@ -9,4 +9,3 @@ export default {
   
 }
 </script>
-

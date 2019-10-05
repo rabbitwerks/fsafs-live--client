@@ -1,0 +1,24 @@
+:root {
+  --font-color-main: #122538;
+  --bg-color: #42b983;
+  --border-color: #2c3e50;
+  --border-size: 3px solid;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.view {
+  padding: 1rem;
+}
