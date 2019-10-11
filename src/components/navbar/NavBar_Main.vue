@@ -28,7 +28,7 @@ export default {
 .navbar--outer {
   height: 4rem;
   padding-left: 1rem;
-  background-color: rgb(47, 156, 156);
+  background-color: var(--nav-bg-color);
   border-bottom: var(--border-size) var(--border-color);
 }
 </style>

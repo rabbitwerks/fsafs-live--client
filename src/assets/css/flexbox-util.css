@@ -488,3 +488,104 @@ SHORTHAND SYNTAX FOR FLEXBOX UTIL LIBRARY @rabbitwerks.js
 .fxbx.spc-ev {
   justify-content: space-evenly;
 }
+
+
+
+/* SHORTHAND FLEXGAP CLASSES */
+.fg1 > *{
+  margin: 0 .25rem;
+ }
+ .fg1 > *:first-child {
+   margin: 0 .25rem 0 0;
+ }
+ .fg1 > *:last-child{
+  margin: 0 0 0 .25rem;
+ }
+ .fg2 > *{
+  margin: 0 .5rem;
+ }
+ .fg2 > *:first-child {
+   margin: 0 .5rem 0 0;
+ }
+ .fg2 > *:last-child{
+  margin: 0 0 0 .5rem;
+ }
+ .fg3 > *{
+  margin: 0 .75rem;
+ }
+ .fg3 > *:first-child {
+   margin: 0 .75rem 0 0;
+ }
+ .fg3 > *:last-child{
+  margin: 0 0 0 .75rem;
+ }
+ .fg4 > *{
+  margin: 0 1rem;
+ }
+ .fg4 > *:first-child {
+   margin: 0 1rem 0 0;
+ }
+ .fg4 > *:last-child{
+  margin: 0 0 0 1rem;
+ }
+ .fg5 > *{
+  margin: 0 1.5rem;
+ }
+ .fg5 > *:first-child {
+   margin: 0 1.5rem 0 0;
+ }
+ .fg5 > *:last-child{
+  margin: 0 0 0 1.5rem;
+ }
+ 
+ 
+ .fd-c.fg1 > *{
+  margin: .25rem 0;
+ }
+ .fd-c.fg1 > *:first-child {
+   margin: 0 0 .25rem 0;
+ }
+ .fd-c.fg1 > *:last-child{
+  margin: .25rem 0 0 0;
+ }
+ .fd-c.fg2 > *{
+  margin: .5rem 0;
+ }
+ .fd-c.fg2 > *:first-child {
+   margin: 0 0 .5rem 0;
+ }
+ .fd-c.fg2 > *:last-child{
+  margin: .5rem 0 0 0;
+ }
+ .fd-c.fg3 > *{
+  margin: .75rem 0;
+ }
+ .fd-c.fg3 > *:first-child {
+   margin: 0 0 .75rem 0;
+ }
+ .fd-c.fg3 > *:last-child{
+  margin: .75rem 0 0 0;
+ }
+ .fd-c.fg4 > *{
+  margin: 1rem 0;
+ }
+ .fd-c.fg4 > *:first-child {
+   margin: 0 0 1rem 0;
+ }
+ .fd-c.fg4 > *:last-child{
+  margin: 1rem 0 0 0;
+ }
+ .fd-c.fg5 > *{
+  margin: 1.5rem 0;
+ }
+ .fd-c.fg5 > *:first-child {
+   margin: 0 0 1.5rem 0;
+ }
+ .fd-c.fg5 > *:last-child{
+  margin: 1.5rem 0 0 0;
+ }
+ 
+ 
+ .fs1 {
+   flex: 1;
+ }

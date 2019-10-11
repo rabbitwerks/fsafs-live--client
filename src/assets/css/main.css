@@ -1,6 +1,9 @@
 :root {
-  --font-color-main: #122538;
-  --bg-color: #42b983;
+  --font-color-main: #5dd8a9;
+  --font-color--white: #d3fff0;
+  --font-color--light: #74ffca;
+  --nav-bg-color: #0f0e1f;
+  --app-bg-color: #07070f;
   --border-color: #2c3e50;
   --border-size: 3px solid;
 }
@@ -21,4 +24,29 @@ html {
 
 .view {
   padding: 1rem;
+}
+
+.name--input-group, .username--input-group, .email--input-group, .password--input-group {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.input--label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: .25rem;
+}
+
+.input--text {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  display: block;
+  width: 100%;
+  height: 2rem;
+  padding-left: .25rem;
+  border: var(--border-size) var(--font-color-main);
+  border-radius: 3px;
+}
+.input--text:disabled {
+  background-color: #646464;
 }
