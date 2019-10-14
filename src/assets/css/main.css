@@ -26,9 +26,23 @@ html {
   padding: 1rem;
 }
 
+.btn {
+  display: block;
+  width: 10rem;
+  height: 2rem;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
 .name--input-group, .username--input-group, .email--input-group, .password--input-group {
   width: 100%;
   margin-bottom: 1rem;
+}
+
+.input--group {
+  width: 100%
 }
 
 .input--label {
@@ -47,6 +61,17 @@ html {
   border: var(--border-size) var(--font-color-main);
   border-radius: 3px;
 }
+
 .input--text:disabled {
   background-color: #646464;
+}
+
+.cta--primary {
+  background-color: var(--font-color-main);
+  border: var(--border-size) var(--font-color--light);
+  transition: all .3s ease-in-out;
+}
+.cta--primary:hover {
+  font-size: 1.2rem;
+  border: var(--border-size) var(--font-color--white);
 }

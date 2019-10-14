@@ -124,8 +124,7 @@
                 required
               >
             </div>
-            <div 
-              v-show="newUser.pass.length > 5"
+            <div
               class="input--group">
               <label 
                 for="passConfirm" 
@@ -133,7 +132,7 @@
                   >Confirm Password
               </label>
               <input
-                
+                :disabled="newUser.pass.length < 5"
                 v-model="newUser.passConfirm"
                 type="password"
                 id="passConfirm"
@@ -142,6 +141,16 @@
               >
             </div>
           </div>
+
+          <div class="actions--panel fxbx">
+            <input 
+              @click.prevent="attemptRegistration"
+              type="submit" 
+              value="Register!" 
+              class="btn cta--primary" 
+            />
+          </div>
+
         </form>
       </div>
     </div>
@@ -150,6 +159,17 @@
 </template>
 
 <script>
+import Joi from '@hapi/joi';
+
+const registerSchema = Joi.object().keys({
+  firstName: Joi.string().alphanum().min(3).max(30).required(),
+  lastName: Joi.string().alphanum().min(3).max(30).required(),
+  username: Joi.string().alphanum().min(3).max(30).required(),
+  userClass: Joi.string().alphanum().min(3).max(30).required(),
+  password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/),
+  email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'co.uk', 'io', 'tech']} })
+});
+
 export default {
   data() {
     return {
@@ -162,6 +182,60 @@ export default {
         emailConfirm: '',
         pass: '',
         passConfirm: '',
+      }
+    }
+  },
+  methods: {
+    attemptRegistration() {
+      const { firstName, lastName, username, userClass, email, emailConfirm, pass, passConfirm } = this.newUser;
+
+      if (
+        firstName &&
+        lastName &&
+        username &&
+        userClass &&
+        email &&
+        emailConfirm &&
+        pass &&
+        passConfirm
+      ) {
+        if (email === emailConfirm) {
+          if (pass === passConfirm) {
+            const validatedNewUser = {
+              firstName,
+              lastName,
+              username,
+              userClass,
+              email,
+              password: pass,
+            }
+            // joi validation 
+            registerSchema.validateAsync(validatedNewUser)
+              .then(result => {
+                fetch(`http://localhost:1337/auth/register`, {
+                  method: 'POST',
+                  headers: {
+                    'Content-type': 'application/json',
+                  },
+                  body: JSON.stringify(validatedNewUser),
+                })
+                  .then(response => response.json())
+                  .then(data => {
+                    localStorage.setItem('user', JSON.stringify(data.addedUser));
+                    localStorage.setItem('token', data.token)
+                  })
+                  .catch(err => console.log(err))
+              })
+              .catch(err => console.log(err))
+          } else {
+            console.log('passwords do not match')
+          }
+        } else {
+          console.log('emails do not match')
+        }
+      } else {
+        // missing input field(s)
+        console.log('all fields are required')
       }
     }
   }
