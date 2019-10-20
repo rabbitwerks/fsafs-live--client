@@ -10,51 +10,34 @@
           class="content--inner">
 
           <div class="name--input-group fxbx fg2">
-            <div class="input--group">
-              <label 
-                for="firstName" 
-                class="input--label"
-                  >First Name
-              </label>
-              <input
-                v-model="newUser.firstName"
-                type="text"
-                id="firstName"
-                class="input--text"
-                required
-              >
-            </div>
-            <div class="input--group">
-              <label 
-                for="lastName" 
-                class="input--label"
-                  >Last Name
-              </label>
-              <input
-                v-model="newUser.lastName"
-                type="text"
-                id="lastName"
-                class="input--text"
-                required
-              >
-            </div>
+            
+            <Input-Base 
+              @updateValue="(value) => newUser.firstName = value"
+              type="text"
+              id="firstName"
+              label="First Name"
+              autocomplete="true"
+            />
+
+            <Input-Base 
+              @updateValue="(value) => newUser.lastName = value"
+              type="text"
+              id="lastName"
+              label="Last Name"
+              autocomplete="true"
+            />
           </div>
 
           <div class="username--input-group fxbx fg2">
-            <div class="input--group">
-              <label 
-                for="username" 
-                class="input--label"
-                  >Username
-              </label>
-              <input
-                v-model="newUser.username"
-                type="text"
-                id="username"
-                class="input--text"
-                required
-              >
-            </div>
+
+            <Input-Base 
+              @updateValue="(value) => newUser.username = value"
+              type="text"
+              id="username"
+              label="Username"
+              autocomplete="true"
+            />
+
             <div class="input--group">
               <label 
                 for="userClass" 
@@ -79,67 +62,44 @@
           </div>
 
           <div class="email--input-group fxbx fg2">
-            <div class="input--group">
-              <label 
-                for="email" 
-                class="input--label"
-                  >Email
-              </label>
-              <input
-                v-model="newUser.email"
-                type="email"
-                id="email"
-                class="input--text"
-                required
-              >
-            </div>
-            <div class="input--group">
-              <label 
-                for="emailConfirm" 
-                class="input--label"
-                  >Confirm Email
-              </label>
-              <input
-                v-model="newUser.emailConfirm"
-                type="email"
-                id="emailConfirm"
-                class="input--text"
-                required
-              >
-            </div>
+
+            <Input-Base 
+              @updateValue="(value) => newUser.email = value"
+              type="email"
+              id="email"
+              label="Email"
+              autocomplete="true"
+            />
+
+            <Input-Base 
+              @updateValue="(value) => newUser.emailConfirm = value"
+              type="email"
+              id="emailConfirm"
+              label="Confirm Email"
+              autocomplete="true"
+            />
+
           </div>
 
           <div class="password--input-group fxbx fg2">
-            <div class="input--group">
-              <label 
-                for="pass" 
-                class="input--label"
-                  >Password
-              </label>
-              <input
-                v-model="newUser.pass"
-                type="password"
-                id="pass"
-                class="input--text"
-                required
-              >
-            </div>
-            <div
-              class="input--group">
-              <label 
-                for="passConfirm" 
-                class="input--label"
-                  >Confirm Password
-              </label>
-              <input
-                :disabled="newUser.pass.length < 5"
-                v-model="newUser.passConfirm"
-                type="password"
-                id="passConfirm"
-                class="input--text"
-                required
-              >
-            </div>
+
+            <Input-Base 
+              @updateValue="(value) => newUser.pass = value"
+              type="password"
+              id="pass"
+              label="Password"
+              autocomplete="true"
+            />
+
+            <Input-Base 
+              @updateValue="(value) => newUser.passConfirm = value"
+              type="password"
+              id="passConfirm"
+              label="Confirm Password"
+              :disabled="newUser.pass.length < 6"
+              autocomplete="true"
+            />
+
           </div>
 
           <div class="actions--panel fxbx">
@@ -159,6 +119,7 @@
 </template>
 
 <script>
+import Input_Base from '../components/shared/Input_Base.vue';
 import Joi from '@hapi/joi';
 
 const registerSchema = Joi.object().keys({
@@ -171,6 +132,9 @@ const registerSchema = Joi.object().keys({
 });
 
 export default {
+  components: {
+    'Input-Base': Input_Base,
+  },
   data() {
     return {
       newUser: {
@@ -246,10 +210,5 @@ export default {
 .register--inner {
   width: 70%;
   margin-top: 4rem;
-}
-.view-header {
-  padding-bottom: .5rem;
-  margin-bottom: 1rem;
-  border-bottom: var(--border-size) var(--font-color-main);
 }
 </style>
