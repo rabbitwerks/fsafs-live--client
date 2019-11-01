@@ -73,16 +73,7 @@ export default {
 
         loginSchema.validateAsync(this.loginCreds)
           .then(validatedCreds => {
-            fetch('http://localhost:1337/auth/login', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(validatedCreds)
-            })
-              .then(result => result.json())
-              .then(data => console.log(data))
-              .catch(err => console.log(err))
+            this.$store.dispatch('attemptLogin_ACTION', validatedCreds)
           })
           .catch(err => console.log(err));
 

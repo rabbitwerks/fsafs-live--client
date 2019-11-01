@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@hapi/joi": "^16.1.7",
+    "cookie": "^0.4.0",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",

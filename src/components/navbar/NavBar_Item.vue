@@ -20,6 +20,7 @@ export default {
   },
   methods: {
     navigateView() {
+      console.log('happy halloween!')
       if (this.$route.name !== this.route) {
         this.$router.push(this.route)
           .catch(err => console.log(err));

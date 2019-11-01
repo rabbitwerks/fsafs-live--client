@@ -176,19 +176,8 @@ export default {
             // joi validation 
             registerSchema.validateAsync(validatedNewUser)
               .then(result => {
-                fetch(`http://localhost:1337/auth/register`, {
-                  method: 'POST',
-                  headers: {
-                    'Content-type': 'application/json',
-                  },
-                  body: JSON.stringify(validatedNewUser),
-                })
-                  .then(response => response.json())
-                  .then(data => {
-                    localStorage.setItem('user', JSON.stringify(data.addedUser));
-                    localStorage.setItem('token', data.token)
-                  })
-                  .catch(err => console.log(err))
+                this.$store.dispatch('registerUser_ACTION', result)
+                .catch(err => console.log(err))
               })
               .catch(err => console.log(err))
           } else {
