@@ -20,7 +20,9 @@ export default {
   },
   methods: {
     navigateView() {
-      console.log('merry christmas happy hannukah happy friggin\' holidays bruh!')
+      // TODO: Remove data from Vuex on Logout
+      // TODO: Fix style display
+      document.cookie = `token= ; expires= ${Date.now() - 100000000}`
       if (this.$route.name !== this.route) {
         this.$router.push(this.route)
           .catch(err => console.log(err));

@@ -17,7 +17,16 @@
 
 <script>
 export default {
-  
+  // mounted() {
+  //   fetch('http://localhost:1337/api', {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-type': 'application/json',
+  //       'Access-Control-Allow-Credentials': true
+  //     },
+  //     credentials: 'include',
+  //   })
+  // }
 }
 </script>
 

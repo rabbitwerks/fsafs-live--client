@@ -12,7 +12,20 @@ import NavBar_Main from './components/navbar/NavBar_Main.vue';
 export default {
   components: {
     'NavBar--Main': NavBar_Main,
-  }
+  },
+  mounted() {
+    fetch('http://localhost:1337/auth/verify', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+    })
+      .then(response => response.json())
+        // TODO: set user result in Vuex store.
+      .then(result => this.$store.dispatch('verifiedUser_CookieLogin_ACTION', result))
+      .catch(err => console.log(err));
+  },
 };
 </script>
 

@@ -15,18 +15,19 @@ export default new Vuex.Store({
       _id: '',
       username: '',
       userClass: '',
+      firstName: '',
+      lastName: '',
+      email: '',
     },
 
   },
   mutations: {
     updateStore_userLoggedIn_MUTA(state, payload) {
+      console.log(payload)
       if (payload.message) return;
-      const { token, user } = payload;
+      const { user } = payload;
       state.user = user;
       state.isLoggedIn = true;
-
-      const tokenCookie = `token=${token}`;
-      document.cookie = tokenCookie;
 
       router.push('/dashboard');
     },
@@ -38,6 +39,7 @@ export default new Vuex.Store({
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify(payload),
       })
         .then(result => result.json())
@@ -55,6 +57,10 @@ export default new Vuex.Store({
       })
         .then(response => response.json())
         .then(data => commit('updateStore_userLoggedIn_MUTA', data));
+    },
+
+    verifiedUser_CookieLogin_ACTION({ commit }, payload) {
+      commit('updateStore_userLoggedIn_MUTA', payload);
     },
   },
 });

@@ -1,25 +1,53 @@
 <template>
   <div class="navbar--outer fxbx">
     <NavBar--Brand text="FSAFS" />
-    <NavBar--Item 
-      text="Login" 
-      route="login"
-    />
-    <NavBar--Item 
-      text="Register"
-      route="register"
-    />
+    <div
+      v-if="!isLoggedIn"
+      class="logged-out"
+    >
+      <NavBar--Item 
+        text="Login" 
+        route="login"
+      />
+      <NavBar--Item 
+        text="Register"
+        route="register"
+      />
+    </div>
+    <div
+      v-else
+      class="logged-in"
+    >
+      <NavBar--Item 
+        text="Dashboard"
+        route="dashboard"
+      />
+      <NavBar--Logout 
+        text="Logout"
+        route="login"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import NavBar_Brand from './NavBar_Brand.vue';
 import NavBar_Item from './NavBar_Item.vue';
+import NavBar_Logout from './NavBar_Logout.vue';
 
 export default {
+  computed: {
+    isLoggedIn() {
+      return this.$store.state.isLoggedIn;
+    },
+    user() {
+      return this.$store.state.user;
+    }
+  },
   components: {
     'NavBar--Brand': NavBar_Brand,
     'NavBar--Item': NavBar_Item,
+    'NavBar--Logout': NavBar_Logout,
   }
 };
 </script>
