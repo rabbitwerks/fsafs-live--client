@@ -1,6 +1,6 @@
 <template>
   <div 
-    @click="navigateView"
+    @click="logout"
     class="navbar--item pointer fxbx spc-ctr">
     <span>{{ text }}</span>
   </div>
@@ -19,11 +19,10 @@ export default {
     }
   },
   methods: {
-    navigateView() {
-      // TODO: Remove data from Vuex on Logout
-      // TODO: Fix style display
+    logout() {
       document.cookie = `token= ; expires= ${Date.now() - 100000000}`
       if (this.$route.name !== this.route) {
+        this.$store.dispatch('logout_ACTION')
         this.$router.push(this.route)
           .catch(err => console.log(err));
       }

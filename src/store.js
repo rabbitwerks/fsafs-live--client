@@ -31,6 +31,9 @@ export default new Vuex.Store({
 
       router.push('/dashboard');
     },
+    logout_MUTA(state) {
+      state.isLoggedIn = false;
+    }
   },
   actions: {
     attemptLogin_ACTION({ commit }, payload) {
@@ -62,5 +65,9 @@ export default new Vuex.Store({
     verifiedUser_CookieLogin_ACTION({ commit }, payload) {
       commit('updateStore_userLoggedIn_MUTA', payload);
     },
+
+    logout_ACTION({ commit }) {
+      commit('logout_MUTA')
+    }
   },
 });

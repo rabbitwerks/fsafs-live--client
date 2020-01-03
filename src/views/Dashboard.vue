@@ -27,9 +27,8 @@ export default {
   //     credentials: 'include',
   //   })
   // }
-}
+};
 </script>
 
 <style scoped>
-  
 </style>

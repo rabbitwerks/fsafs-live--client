@@ -1,23 +1,28 @@
 <template>
   <div class="navbar--outer fxbx">
-    <NavBar--Brand text="FSAFS" />
+    <NavBar--Brand 
+      text="FSAFS"
+      :name="user.firstName"
+      :isLoggedIn="isLoggedIn"
+    />
     <div
       v-if="!isLoggedIn"
-      class="logged-out"
+      class="logged-out fxbx"
     >
-      <NavBar--Item 
-        text="Login" 
+      <NavBar--Item
+        text="Login"
         route="login"
       />
-      <NavBar--Item 
+      <NavBar--Item
         text="Register"
         route="register"
       />
     </div>
     <div
       v-else
-      class="logged-in"
+      class="logged-in fxbx"
     >
+    <!-- TODO: add user name cmp -->
       <NavBar--Item 
         text="Dashboard"
         route="dashboard"

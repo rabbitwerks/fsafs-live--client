@@ -11,7 +11,7 @@
 
           <div class="username--input-group fxbx fg2">
 
-            <Input-Base 
+            <Input-Base
               @updateValue="(value) => loginCreds.username = value"
               type="text"
               id="username"
@@ -19,7 +19,7 @@
               autocomplete="true"
             />
 
-            <Input-Base 
+            <Input-Base
               @updateValue="(value) => loginCreds.password = value"
               type="password"
               id="pass"
@@ -31,11 +31,11 @@
 
             
           <div class="actions--panel fxbx">
-            <input 
+            <input
               @click.prevent="attemptLogin"
-              type="submit" 
-              value="Login!" 
-              class="btn cta--primary" 
+              type="submit"
+              value="Login!"
+              class="btn cta--primary"
             />
           </div>
 
