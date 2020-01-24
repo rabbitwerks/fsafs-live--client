@@ -10,8 +10,8 @@
           class="content--inner">
 
           <div class="name--input-group fxbx fg2">
-            
-            <Input-Base 
+
+            <Input-Base
               @updateValue="(value) => newUser.firstName = value"
               type="text"
               id="firstName"
@@ -19,7 +19,7 @@
               autocomplete="true"
             />
 
-            <Input-Base 
+            <Input-Base
               @updateValue="(value) => newUser.lastName = value"
               type="text"
               id="lastName"
@@ -30,7 +30,7 @@
 
           <div class="username--input-group fxbx fg2">
 
-            <Input-Base 
+            <Input-Base
               @updateValue="(value) => newUser.username = value"
               type="text"
               id="username"
@@ -39,12 +39,12 @@
             />
 
             <div class="input--group">
-              <label 
-                for="userClass" 
+              <label
+                for="userClass"
                 class="input--label"
                   >User Class
               </label>
-              <select 
+              <select
                 v-model="newUser.userClass"
                 class="input--text"
                 id="userClass">
@@ -63,7 +63,7 @@
 
           <div class="email--input-group fxbx fg2">
 
-            <Input-Base 
+            <Input-Base
               @updateValue="(value) => newUser.email = value"
               type="email"
               id="email"
@@ -71,7 +71,7 @@
               autocomplete="true"
             />
 
-            <Input-Base 
+            <Input-Base
               @updateValue="(value) => newUser.emailConfirm = value"
               type="email"
               id="emailConfirm"
@@ -83,7 +83,7 @@
 
           <div class="password--input-group fxbx fg2">
 
-            <Input-Base 
+            <Input-Base
               @updateValue="(value) => newUser.pass = value"
               type="password"
               id="pass"
@@ -91,7 +91,7 @@
               autocomplete="true"
             />
 
-            <Input-Base 
+            <Input-Base
               @updateValue="(value) => newUser.passConfirm = value"
               type="password"
               id="passConfirm"
@@ -103,18 +103,18 @@
           </div>
 
           <div class="actions--panel fxbx">
-            <input 
+            <input
               @click.prevent="attemptRegistration"
-              type="submit" 
-              value="Register!" 
-              class="btn cta--primary" 
+              type="submit"
+              value="Register!"
+              class="btn cta--primary"
             />
           </div>
 
         </form>
       </div>
     </div>
-    
+
   </div>
 </template>
 
@@ -173,7 +173,7 @@ export default {
               email,
               password: pass,
             }
-            // joi validation 
+            // joi validation
             registerSchema.validateAsync(validatedNewUser)
               .then(result => {
                 this.$store.dispatch('registerUser_ACTION', result)
