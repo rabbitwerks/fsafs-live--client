@@ -18,6 +18,7 @@ export default {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'https://fsafs-backend.now.sh',
       },
       credentials: 'include',
     })

@@ -42,6 +42,7 @@ export default new Vuex.Store({
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'https://fsafs-backend.now.sh',
         },
         credentials: 'include',
         body: JSON.stringify(payload),
