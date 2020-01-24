@@ -14,7 +14,7 @@ export default {
     'NavBar--Main': NavBar_Main,
   },
   mounted() {
-    fetch('http://localhost:1337/auth/verify', {
+    fetch('https://fsafs-backend.now.sh/auth/verify', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

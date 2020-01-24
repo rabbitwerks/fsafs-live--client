@@ -6,6 +6,7 @@ import router from './router';
 Vue.use(Vuex);
 
 const localURL = 'http://localhost:1337';
+const remoteURL = 'https://fsafs-backend.now.sh/';
 
 
 export default new Vuex.Store({
@@ -23,7 +24,7 @@ export default new Vuex.Store({
   },
   mutations: {
     updateStore_userLoggedIn_MUTA(state, payload) {
-      console.log(payload)
+      console.log(payload);
       if (payload.message) return;
       const { user } = payload;
       state.user = user;
@@ -37,7 +38,7 @@ export default new Vuex.Store({
   },
   actions: {
     attemptLogin_ACTION({ commit }, payload) {
-      fetch(`${localURL}/auth/login`, {
+      fetch(`${remoteURL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,7 +52,7 @@ export default new Vuex.Store({
     },
 
     registerUser_ACTION({ commit }, payload) {
-      fetch(`${localURL}/auth/register`, {
+      fetch(`${remoteURL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -67,7 +68,7 @@ export default new Vuex.Store({
     },
 
     logout_ACTION({ commit }) {
-      commit('logout_MUTA')
+      commit('logout_MUTA');
     }
   },
 });
