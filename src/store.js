@@ -2,12 +2,9 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import router from './router';
+import API_URL from './API_URL';
 
 Vue.use(Vuex);
-
-const localURL = 'http://localhost:1337';
-const remoteURL = 'https://fsafs-backend.now.sh/';
-
 
 export default new Vuex.Store({
   state: {
@@ -38,11 +35,10 @@ export default new Vuex.Store({
   },
   actions: {
     attemptLogin_ACTION({ commit }, payload) {
-      fetch(`${remoteURL}/auth/login`, {
+      fetch(`${API_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'https://fsafs-backend.now.sh',
         },
         credentials: 'include',
         body: JSON.stringify(payload),
@@ -53,11 +49,10 @@ export default new Vuex.Store({
     },
 
     registerUser_ACTION({ commit }, payload) {
-      fetch(`${remoteURL}/auth/register`, {
+      fetch(`${API_URL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
-          'Access-Control-Allow-Origin': 'https://fsafs-backend.now.sh',
         },
         body: JSON.stringify(payload),
       })

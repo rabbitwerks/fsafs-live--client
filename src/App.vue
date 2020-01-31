@@ -8,17 +8,17 @@
 
 <script>
 import NavBar_Main from './components/navbar/NavBar_Main.vue';
+import API_URL from './API_URL';
 
 export default {
   components: {
     'NavBar--Main': NavBar_Main,
   },
   mounted() {
-    fetch('https://fsafs-backend.now.sh/auth/verify', {
+    fetch(`${API_URL}/auth/verify`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://fsafs-backend.now.sh',
       },
       credentials: 'include',
     })
